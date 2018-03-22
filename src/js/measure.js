@@ -75,7 +75,14 @@ function initTool() {
         parentElementHorizontal,
         parentElementVertical;
 
-    $('.redline-tool-wrapper *').addClass('redline-layer'); //Label all redline tool elelemnts.
+    // Strip out multi-line text and convert to single p tag.
+    Object.values(document.getElementsByClassName('text')).forEach((element) => {
+        console.log(element);
+    });
+
+    // Label all redline tool elelemnts.
+    $('.redline-tool-wrapper *').addClass('redline-layer');
+
     $('.redline-layer').hide();
     $('.redline-tool-wrapper').show();
     $('#top-control-panel').show();
